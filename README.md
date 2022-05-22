@@ -7,3 +7,5 @@
 
 <p> daarna runt u in de java code het bestand App.java</p>
 <p> open daarna de website en alles zou nu moeten werken</p>
+
+<p><a href="https://www.youtube.com/watch?v=nKkfV2kOZIU">youtube video</a></p>
