@@ -1,0 +1,24 @@
+package application.entitys.icons;
+
+@Entity
+@Table(name = "icons")	
+public class Icon {
+
+	@Id
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Integer id;
+	
+	@Column(name= "iconURL")
+	public String iconURL;
+	
+	@OneToOne(mappedBy = "icon", fetch = FetchType.LAZY,
+			cascade = CascadeType.ALL)
+	public Image image;	
+	
+	public Icon(String url) {
+		this.iconURL = url;
+	}
+	
+	public Icon() {}
+}

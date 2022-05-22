@@ -1,0 +1,5 @@
+package application.entitys.icons;
+
+public interface IconRep {
+
+}

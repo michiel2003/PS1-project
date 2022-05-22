@@ -1,0 +1,8 @@
+package application.entitys.images;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public Interface ImageRep {
+
+}

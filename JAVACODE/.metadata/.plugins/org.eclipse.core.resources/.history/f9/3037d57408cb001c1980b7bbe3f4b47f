@@ -1,0 +1,7 @@
+package application.entitys.icons;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface IconRep extends CrudRepository<Icon, Integer>{
+
+}

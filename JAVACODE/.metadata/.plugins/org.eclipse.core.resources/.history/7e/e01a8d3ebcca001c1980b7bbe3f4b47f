@@ -1,0 +1,9 @@
+package application.entitys.images;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ImageRep extends CrudRepository<Image, Integer>{
+
+}

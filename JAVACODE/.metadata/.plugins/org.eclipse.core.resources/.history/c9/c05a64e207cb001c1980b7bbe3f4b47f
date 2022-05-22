@@ -1,0 +1,43 @@
+package application.entitys.icons;
+
+public class IconController {\
+	
+	private String createIco() {
+	List<String> imageURLS = new ArrayList<String>();
+	imageURLS.addAll(imgrep.findAllURL());
+	for(String url: imageURLS) {
+		boolean save = true;
+		try {
+			Image image = imgrep.getImageByUrl(url);
+			for(String urlico: icrep.getAllIcons()) {
+				if(urlico.equalsIgnoreCase(Path.of(".").toRealPath().toString().replaceAll("\\\\", "/") + "/DATA/ICONS" + url.substring(url.lastIndexOf('/')))) {
+					save = false;
+				}
+			}
+			if(save == true) {
+				Icon icon = resizeImageToIco(url, image);
+				icrep.save(icon);
+				image.icon = icon;
+				imgrep.save(image);
+			}
+			
+		} catch (Exception e) {
+			return "fail";
+		}
+	}
+	return "done";
+}
+
+private Icon resizeImageToIco(String url, Image image) throws IOException {
+	Icon icon = new Icon();
+	icon.iconURL = Path.of(".").toRealPath().toString().replaceAll("\\\\", "/") + "/DATA/ICONS" + url.substring(url.lastIndexOf('/'));
+	image.icon = icon;
+	System.out.println(Path.of(".").toRealPath().toString().replaceAll("\\\\", "/"));
+	Thumbnails.of(new File(url))
+	.size(width, height).toFile(new File(Path.of(".").toRealPath() + "/DATA/ICONS" + url.substring(url.lastIndexOf('/'))));
+	System.out.println(Path.of(".").toRealPath().toString().replaceAll("\\\\", "/") + "/DATA/ICONS" + url.substring(url.lastIndexOf('/')));
+	icon.iconURL = Path.of(".").toRealPath().toString().replaceAll("\\\\", "/") + "/DATA/ICONS" + url.substring(url.lastIndexOf('/'));
+	return icon;
+}
+
+}
