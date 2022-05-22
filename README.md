@@ -1,5 +1,1 @@
-# PS1-project
-
-## Uses mysql for database
-## Uses java for backend
-## Uses Vue framework
+<h1> PS 1 project website voor mijn mama</h1>
